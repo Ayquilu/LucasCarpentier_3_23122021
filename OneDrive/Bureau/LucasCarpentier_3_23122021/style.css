@@ -10,12 +10,29 @@
 
 body {
     margin: 0px;
+    font-family: "Roboto", sans-serif;
 }
 
 header {
+    position: relative;
     margin: 0px;
     font-family: "shrikhand", cursive;
     text-align: center;
     box-shadow: 0 0 0.5rem rgb(0 0 0 / 25%);
     padding: 0.3rem;
 }
+
+main .header_bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #f3f3f3;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+main .header_bottom i {
+    font-size: 1.3rem;
+}
+
