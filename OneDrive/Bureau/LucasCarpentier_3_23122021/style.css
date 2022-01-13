@@ -128,7 +128,6 @@ header {
   }
 }
 .Menus .new {
-  border: 1px solid red;
   position: relative;
 }
 .Menus .new::before {
@@ -143,35 +142,35 @@ header {
   right: 1rem;
   top: 1rem;
 }
-.Menus .card_img {
+
+.card {
+  position: relative;
+}
+.card_img {
   border: 1px solid black;
   border-radius: 1rem 1rem 0 0;
   height: 15rem;
 }
-.Menus .card_img1 {
-  background-image: url(../../assets/menu1.jpg);
-  background-color: red;
+.card_img1 {
+  background-image: url("./assets/menu1.jpg");
 }
-.Menus .card_img2 {
-  background-image: url(../../assets/menu2.jpg);
-  background-color: red;
+.card_img2 {
+  background-image: url("./assets/menu2.jpg");
 }
-.Menus .card_img3 {
-  background-image: url(../../assets/menu3.jpg);
-  background-color: red;
+.card_img3 {
+  background-image: url("./assets/menu3.jpg");
 }
-.Menus .card_img4 {
-  background-image: url(../../assets/menu4.jpg);
-  background-color: red;
+.card_img4 {
+  background-image: url("./assets/menu4.jpg");
 }
-.Menus .card_description h3,
-.Menus .card_description p {
+.card_description h3,
+.card_description p {
   margin: 0.5rem;
 }
-.Menus .card_description p {
+.card_description p {
   padding-top: 0.5rem;
 }
-.Menus .card_description i {
+.card_description i {
   font-size: 2rem;
   position: absolute;
   right: 1rem;
