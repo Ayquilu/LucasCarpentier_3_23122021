@@ -1,0 +1,41 @@
+@import "../Utils/mixins.scss";
+
+.Operation {
+  & ol {
+    display: flex;
+    gap: 2rem;
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
+  }
+  & li {
+    &::before {
+      content: counter(steps);
+      counter-increment: steps;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #9356dc;
+      color: white;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      position: absolute;
+      left: -1rem;
+      bottom: 1rem;
+      
+    }
+    position: relative;
+    list-style-type: none;
+    background-color: #f6f6f6;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    @include default-shadow;
+    &:hover {
+      @include zoom;
+    }
+    & i.fas {
+      margin-right: 1rem;
+    }
+  }
+}

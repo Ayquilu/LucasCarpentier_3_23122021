@@ -1,38 +1,194 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&family=Shrikhand&display=swap");
-
-
 *,
 ::before,
 ::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0px;
-    font-family: "Roboto", sans-serif;
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+h2 {
+  padding: 1rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h3 p {
+  margin: 0;
 }
 
 header {
-    position: relative;
-    margin: 0px;
-    font-family: "shrikhand", cursive;
-    text-align: center;
-    box-shadow: 0 0 0.5rem rgb(0 0 0 / 25%);
-    padding: 0.3rem;
+  position: relative;
+  margin: 0px;
+  font-family: "shrikhand", cursive;
+  text-align: center;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  padding: 0.3rem;
 }
 
-main .header_bottom{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    background-color: #f3f3f3;
-    text-align: center;
-    padding: 0.5rem;
+.header_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #f3f3f3;
+  text-align: center;
+  padding: 0.5rem;
+}
+.header_bottom i {
+  font-size: 1.3rem;
 }
 
-main .header_bottom i {
-    font-size: 1.3rem;
+.Operation ol {
+  display: flex;
+  gap: 2rem;
+}
+@media (max-width: 1000px) {
+  .Operation ol {
+    flex-direction: column;
+  }
+}
+.Operation li {
+  position: relative;
+  list-style-type: none;
+  background-color: #f6f6f6;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+.Operation li::before {
+  content: counter(steps);
+  counter-increment: steps;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9356dc;
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  left: -1rem;
+  bottom: 1rem;
+}
+.Operation li:hover {
+  transform: scale(1.02);
+}
+.Operation li i.fas {
+  margin-right: 1rem;
 }
 
+.section1 {
+  text-align: center;
+}
+.section1 h2 {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+.section1 p {
+  font-size: 1rem;
+}
+.section1 button {
+  color: white;
+  font-weight: 350;
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  background-image: linear-gradient(to top, rgba(147, 80, 220, 0.9), rgba(255, 121, 218, 0.9));
+  transition: transform 100ms;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+.section1 button:hover {
+  transform: scale(1.02);
+}
+
+.section2 {
+  background-color: #f6f6f6;
+}
+.section2 .h2 {
+  margin-bottom: 2rem;
+}
+
+.Menus {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 1000px) {
+  .Menus {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.Menus .new {
+  border: 1px solid red;
+  position: relative;
+}
+.Menus .new::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 2rem;
+  width: 5rem;
+  background-color: #99e2d0;
+  color: #1b6150;
+  display: grid;
+  place-items: center;
+  right: 1rem;
+  top: 1rem;
+}
+.Menus .card_img {
+  border: 1px solid black;
+  border-radius: 1rem 1rem 0 0;
+  height: 15rem;
+}
+.Menus .card_img1 {
+  background-image: url(../../assets/menu1.jpg);
+  background-color: red;
+}
+.Menus .card_img2 {
+  background-image: url(../../assets/menu2.jpg);
+  background-color: red;
+}
+.Menus .card_img3 {
+  background-image: url(../../assets/menu3.jpg);
+  background-color: red;
+}
+.Menus .card_img4 {
+  background-image: url(../../assets/menu4.jpg);
+  background-color: red;
+}
+.Menus .card_description h3,
+.Menus .card_description p {
+  margin: 0.5rem;
+}
+.Menus .card_description p {
+  padding-top: 0.5rem;
+}
+.Menus .card_description i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+footer {
+  background-color: #353535;
+  padding: 0 2rem;
+  color: white;
+}
+footer h2 {
+  font-family: "Shrikhand", "sans-serif";
+  font-weight: 500;
+}
+footer p {
+  padding: 0.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */
