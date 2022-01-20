@@ -46,6 +46,9 @@ header {
   font-size: 1.3rem;
 }
 
+.Operation {
+  counter-reset: compteliste;
+}
 .Operation ol {
   display: flex;
   gap: 2rem;
@@ -64,8 +67,8 @@ header {
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
 }
 .Operation li::before {
-  content: counter(steps);
-  counter-increment: steps;
+  content: counter(compteliste);
+  counter-increment: compteliste 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,8 +78,8 @@ header {
   height: 2rem;
   border-radius: 50%;
   position: absolute;
-  left: -1rem;
   bottom: 1rem;
+  left: -1rem;
 }
 .Operation li:hover {
   transform: scale(1.02);
@@ -112,6 +115,9 @@ header {
 
 .section2 {
   background-color: #f6f6f6;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
 }
 .section2 .h2 {
   margin-bottom: 2rem;
@@ -145,11 +151,13 @@ header {
 
 .card {
   position: relative;
+  background-color: #fff;
+  border-radius: 1rem;
 }
 .card_img {
-  border: 1px solid black;
   border-radius: 1rem 1rem 0 0;
   height: 15rem;
+  background-size: cover;
 }
 .card_img1 {
   background-image: url("./assets/menu1.jpg");
@@ -166,8 +174,6 @@ header {
 .card_description h3,
 .card_description p {
   margin: 0.5rem;
-}
-.card_description p {
   padding-top: 0.5rem;
 }
 .card_description i {
@@ -176,18 +182,31 @@ header {
   right: 1rem;
   bottom: 1rem;
 }
+.card_description .fas {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms;
+  background-image: linear-gradient(to top, #9350dc, #ff79da);
+}
+.card_description .fas:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
 
 footer {
   background-color: #353535;
-  padding: 0 2rem;
+  padding: 0 0 0.5rem 2rem;
   color: white;
 }
 footer h2 {
   font-family: "Shrikhand", "sans-serif";
   font-weight: 500;
+  padding: 1rem 0;
 }
 footer p {
-  padding: 0.5rem;
+  padding: 0.2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

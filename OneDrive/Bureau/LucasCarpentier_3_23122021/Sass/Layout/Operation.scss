@@ -1,6 +1,7 @@
 @import "../Utils/mixins.scss";
 
 .Operation {
+  counter-reset: compteliste ;
   & ol {
     display: flex;
     gap: 2rem;
@@ -10,8 +11,8 @@
   }
   & li {
     &::before {
-      content: counter(steps);
-      counter-increment: steps;
+      content: counter(compteliste);
+      counter-increment: compteliste 1;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -21,9 +22,8 @@
       height: 2rem;
       border-radius: 50%;
       position: absolute;
-      left: -1rem;
       bottom: 1rem;
-      
+      left: -1rem;
     }
     position: relative;
     list-style-type: none;

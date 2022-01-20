@@ -20,11 +20,7 @@
     border: none;
     border-radius: 2rem;
 
-    background-image: linear-gradient(
-      to top,
-      rgba(147, 80, 220, 0.9),
-      rgba(255, 121, 218, 0.9)
-    );
+    @include gradient(0.9);
     transition: transform 100ms;
     @include default-shadow;
   }
