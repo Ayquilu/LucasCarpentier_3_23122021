@@ -6,11 +6,31 @@
   transform: scale(1.02);
 }
 
-@mixin gradient($opacity:0.9) {
+@mixin gradient($opacity: 0.9) {
   background-image: linear-gradient(
-      to top,
-      rgba(147, 80, 220, $opacity),
-      rgba(255, 121, 218, $opacity)
-    )
-  
+    to top,
+    rgba(147, 80, 220, $opacity),
+    rgba(255, 121, 218, $opacity)
+  );
+}
+
+
+
+@mixin Button {
+  color: white;
+  font-weight: 350;
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  transition: transform 100ms;
+  cursor: pointer;
+
+  @include gradient(0.9);
+  @include default-shadow;
+
+  &:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
 }

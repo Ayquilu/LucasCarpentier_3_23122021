@@ -4,6 +4,7 @@
   counter-reset: compteliste ;
   & ol {
     display: flex;
+    justify-content: center;
     gap: 2rem;
     @media (max-width: 1000px) {
       flex-direction: column;

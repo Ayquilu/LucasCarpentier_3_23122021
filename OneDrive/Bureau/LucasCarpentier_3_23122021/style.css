@@ -51,6 +51,7 @@ header {
 }
 .Operation ol {
   display: flex;
+  justify-content: center;
   gap: 2rem;
 }
 @media (max-width: 1000px) {
@@ -88,6 +89,37 @@ header {
   margin-right: 1rem;
 }
 
+@keyframes quarter-spin {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes appear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes pulsing {
+  to {
+    box-shadow: 0 0 0px 25px rgba(255, 255, 255, 0.1);
+  }
+}
 .section1 {
   text-align: center;
 }
@@ -105,12 +137,47 @@ header {
   padding: 1rem 1.5rem;
   border: none;
   border-radius: 2rem;
-  background-image: linear-gradient(to top, rgba(147, 80, 220, 0.9), rgba(255, 121, 218, 0.9));
   transition: transform 100ms;
+  cursor: pointer;
+  background-image: linear-gradient(to top, rgba(147, 80, 220, 0.9), rgba(255, 121, 218, 0.9));
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
 }
 .section1 button:hover {
   transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.loader-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  background-color: #ffffff;
+  opacity: 0.9;
+  height: 100vh;
+  z-index: 1;
+  animation: disappear 200ms;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  transform-origin: top;
+  display: grid;
+  object-position: center;
+}
+.loader-page .loader-animation {
+  font-family: "shrikhand", "sans-serif";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to top, rgba(147, 80, 220, 0.9), rgba(255, 121, 218, 0.9));
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  font-size: 20px;
+  border: none;
+  box-shadow: 0 0 0 #99e2d0;
+  animation: pulsing 1.4s linear infinite;
 }
 
 .section2 {
@@ -204,9 +271,225 @@ footer h2 {
   font-family: "Shrikhand", "sans-serif";
   font-weight: 500;
   padding: 1rem 0;
+  margin-top: 0;
 }
 footer p {
   padding: 0.2rem;
+}
+
+@keyframes quarter-spin {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes appear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes pulsing {
+  to {
+    box-shadow: 0 0 0px 25px rgba(255, 255, 255, 0.1);
+  }
+}
+.header h2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header i {
+  height: 2rem;
+  width: 2rem;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 3rem;
+  top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header i:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.illustration img {
+  display: block;
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.Restaurant_Titre h2 {
+  background-color: #f7f7f7;
+  margin-top: -2rem;
+  margin-bottom: 0;
+  border-radius: 2rem 2rem 0 0;
+  position: relative;
+  font-family: "shrikhand", "sans-serif";
+  padding: 2rem 1rem;
+}
+.Restaurant_Titre i {
+  font-size: 2rem;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+}
+.Restaurant_Titre i.fas {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 0.5s;
+  background-image: linear-gradient(to top, #9350dc, #ff79da);
+}
+.Restaurant_Titre i.fas:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.menu-grid {
+  padding: 0 1rem;
+  background: #f7f7f7;
+}
+.menu-grid h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+}
+.menu-grid h3::after {
+  content: "";
+  height: 0.25rem;
+  width: 3rem;
+  background-color: #99e2d0;
+  position: absolute;
+  left: 0rem;
+  top: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+}
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 3fr;
+  }
+}
+
+.column {
+  animation: appear 1s;
+  animation: appear 1s;
+  animation: appear 1s;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+.column.delay1 {
+  animation-delay: 100ms;
+}
+.column.delay2 {
+  animation-delay: 200ms;
+}
+.column.delay3 {
+  animation-delay: 300ms;
+}
+.column h4,
+.column p {
+  margin: 0;
+}
+
+.colum-item {
+  display: flex;
+}
+.colum-item .colum-item__price {
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  margin-left: auto;
+  font-weight: bolder;
+}
+.colum-item .colum-item__description {
+  padding: 1rem;
+  overflow: hidden;
+}
+.colum-item .colum-item__description h4,
+.colum-item .colum-item__description p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.colum-item .column-item__chek {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 0 1rem 1rem 0;
+  background: #99e2d0;
+  margin-right: -4rem;
+  width: 4rem;
+  transition: all 0.5s;
+}
+.colum-item .column-item__chek i {
+  display: grid;
+  place-items: center;
+  background: white;
+  aspect-ratio: 1;
+  width: 2rem;
+  border-radius: 1rem;
+  color: #99e2d0;
+}
+.colum-item:hover {
+  cursor: pointer;
+}
+.colum-item:hover .column-item__chek {
+  margin: 0;
+}
+.colum-item:hover i {
+  animation: quarter-spin 0.5s;
+}
+
+.order {
+  height: 25vh;
+  display: grid;
+  place-items: center;
+}
+.order button {
+  color: white;
+  font-weight: 350;
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  transition: transform 100ms;
+  cursor: pointer;
+  background-image: linear-gradient(to top, rgba(147, 80, 220, 0.9), rgba(255, 121, 218, 0.9));
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+.order button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 /*# sourceMappingURL=style.css.map */
