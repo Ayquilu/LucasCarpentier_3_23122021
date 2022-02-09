@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     gap: 2rem;
+    margin-right: 1rem;
     @media (max-width: 1000px) {
       flex-direction: column;
     }
@@ -38,5 +39,8 @@
     & i.fas {
       margin-right: 1rem;
     }
+  }
+  & h2{
+    margin-left: 1rem;
   }
 }
