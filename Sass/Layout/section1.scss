@@ -1,0 +1,22 @@
+@import "../Utils/mixins.scss";
+@import "../Utils/animation.scss";
+@import "../Utils/Colors.scss";
+
+.section1 {
+  text-align: center;
+
+  & h2 {
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+
+  & p {
+    font-size: 1rem;
+  }
+
+  & button {
+    @include Button;
+  }
+}
+
+

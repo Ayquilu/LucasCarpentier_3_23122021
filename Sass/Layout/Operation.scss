@@ -1,0 +1,47 @@
+@import "../Utils/mixins.scss";
+@import "../Utils/Colors.scss";
+
+.Operation {
+  counter-reset: compteliste ;
+  & ol {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-right: 1rem;
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
+  }
+  & li {
+    &::before {
+      content: counter(compteliste);
+      counter-increment: compteliste 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $purple;
+      color: $white;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 1rem;
+      left: -1rem;
+    }
+    position: relative;
+    list-style-type: none;
+    background-color: $lightgray2;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    @include default-shadow;
+    &:hover {
+      @include zoom;
+    }
+    & i.fas {
+      margin-right: 1rem;
+    }
+  }
+  & h2{
+    margin-left: 1rem;
+  }
+}

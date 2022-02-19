@@ -1,0 +1,36 @@
+@import "../Utils/mixins.scss";
+@import "../Utils/animation.scss";
+@import "../Utils/Colors.scss";
+
+.loader-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  background-color: $white;
+  opacity: 0.9;
+  height: 100vh;
+  z-index: 1;
+  animation: disappear 5ms;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  transform-origin: top;
+  display: menu;
+  object-position: center;
+  &__animation {
+    font-family: "shrikhand", "sans-serif";
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include gradient(0.9);
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    font-size: 20px;
+    border: none;
+    box-shadow: 0 0 0 $tertiary;
+    animation: pulsing 1.4s linear infinite;
+  }
+}

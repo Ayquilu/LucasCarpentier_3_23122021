@@ -1,0 +1,76 @@
+@import "../Utils/Colors";
+@import "../Utils/mixins.scss";
+
+.section2 {
+  background-color: $lightgray2;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+}
+
+.Menus {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .new {
+    position: relative;
+  }
+  .new::before {
+    content: "Nouveau";
+    position: absolute;
+    height: 2rem;
+    width: 5rem;
+    background-color: $tertiary;
+    color: darken($color: $tertiary, $amount: 50%);
+    display: grid;
+    place-items: center;
+    right: 1rem;
+    top: 1rem;
+  }
+}
+.card {
+  position: relative;
+  background-color: $white;
+  border-radius: 1rem;
+  &_img {
+    border-radius: 1rem 1rem 0 0;
+    height: 15rem;
+    background-size: cover;
+  }
+
+  @for $i from 1 through 4 {
+    &_img#{$i} {
+      background-image: url("./assets/menu#{$i}.jpg");
+      background-position: center;
+    }
+  }
+  &_description {
+    h3,
+    p {
+      margin: 0.5rem;
+      padding-top: 0.5rem;
+    }
+    i {
+      font-size: 2rem;
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+    }
+    .fas {
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      opacity: 0;
+      transition: all 200ms;
+      @include gradient(1);
+      &:hover {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
